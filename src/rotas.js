@@ -21,4 +21,5 @@ rotas.post('/upload', imagem.enviarImagem);
 // edição consumidor
 rotas.put('/consumidores/:id', consumidores.atualizarConsumidor);
 
+
 module.exports = rotas;
