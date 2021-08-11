@@ -21,13 +21,4 @@ rotas.post('/upload', imagem.enviarImagem);
 // edição consumidor
 rotas.put('/consumidores/:id', consumidores.atualizarConsumidor);
 
-/* //Crud de produtos
-rotas.get('/produtos', produtos.listarProdutos);
-rotas.get('/produtos/:id', produtos.obterProduto);
-rotas.post('/produtos', produtos.cadastrarProduto);
-rotas.put('/produtos/:id', produtos.atualizarProduto);
-rotas.delete('/produtos/:id', produtos.excluirProduto);
-rotas.post('/produtos/:id/ativar', produtos.ativarProduto);
-rotas.post('/produtos/:id/desativar', produtos.desativarProduto); */
-
 module.exports = rotas;
