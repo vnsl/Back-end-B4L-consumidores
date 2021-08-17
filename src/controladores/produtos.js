@@ -11,13 +11,17 @@ const listarProdutos = async (req, res) => {
             return res.status(404).json('Não foi encontrado nenhum produto neste restaurante');
         };
 
-        const listaDeProdutosAtivos = await knex('produto').where('ativo', true);
+        const cardapio = await knex('produto').where('ativo', true);
 
-        if(!listaDeProdutosAtivos[0]){
+        if(!cardapio[0]){
             return res.status(404).json('Restaurante não possui produtos ativos');
         }
 
-        return res.status(200).json(listaDeProdutosAtivos);
+        const dadosRestaurante = await knex('restaurante').where('id', id);
+
+        const restaurante = { restaurante: dadosRestaurante[0], cardapio };
+
+        return res.status(200).json(restaurante);
 
     } catch (error) {
         return res.status(400).json(error.message);

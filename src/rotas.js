@@ -21,7 +21,7 @@ rotas.use(autenticacao);
 rotas.get('/restaurantes', restaurantes.listarRestaurantes)
 
 //listar Produtos do Restaurante
-rotas.get('/produtos/:id', produtos.listarProdutos)
+rotas.get('/cardapio/:id', produtos.listarProdutos)
 
 // envio da imagem
 rotas.post('/upload', imagem.enviarImagem);
