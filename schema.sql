@@ -9,8 +9,10 @@ create table if not exists consumidor (
 create table if not exists pedido (
 	id serial primary key,
 	consumidor_id int not null,
-	valor_pedido int not null,
+	restaurante_id int not null,
+	valor_pedido int not null default 0,
   	foreign key (consumidor_id) references consumidor (id),
+  	foreign key (restaurante_id) references restaurante (id),
 );
 
 create table if not exists detalhepedido (
