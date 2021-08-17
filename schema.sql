@@ -18,7 +18,7 @@ create table if not exists detalhepedido (
 	pedido_id int not null,
 	produto_id int not null,
 	quantidade_produto int not null,
-	valor_total int not null,
+	valor_total_produto int not null,
   	foreign key (pedido_id) references pedido (id),
   	foreign key (produto_id) references produto (id),
 );
