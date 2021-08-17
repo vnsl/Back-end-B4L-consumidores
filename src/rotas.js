@@ -3,6 +3,7 @@ const login = require('./controladores/login');
 const consumidores = require('./controladores/consumidores');
 const imagem = require('./controladores/imagem');
 const restaurantes = require('./controladores/restaurantes');
+const produtos = require('./controladores/produtos');
 const autenticacao = require('./filtros/autenticacao');
 
 const rotas = express();
@@ -18,6 +19,9 @@ rotas.use(autenticacao);
 
 // listar restaurantes
 rotas.get('/restaurantes', restaurantes.listarRestaurantes)
+
+//listar Produtos do Restaurante
+rotas.get('/produtos/:id', produtos.listarProdutos)
 
 // envio da imagem
 rotas.post('/upload', imagem.enviarImagem);
