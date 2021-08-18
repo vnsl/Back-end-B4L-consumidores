@@ -11,7 +11,7 @@ const listarProdutos = async (req, res) => {
             return res.status(404).json('Não foi encontrado nenhum produto neste restaurante');
         };
 
-        const cardapio = await knex('produto').where('ativo', true);
+        const cardapio = await knex('produto').where('ativo', true).andWhere('restaurante_id', id);
 
         if(!cardapio[0]){
             return res.status(404).json('Restaurante não possui produtos ativos');
