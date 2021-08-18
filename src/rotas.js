@@ -4,6 +4,7 @@ const consumidores = require('./controladores/consumidores');
 const imagem = require('./controladores/imagem');
 const restaurantes = require('./controladores/restaurantes');
 const produtos = require('./controladores/produtos');
+const endereco = require('./controladores/endereco');
 const autenticacao = require('./filtros/autenticacao');
 
 const rotas = express();
@@ -19,6 +20,9 @@ rotas.use(autenticacao);
 
 // listar restaurantes
 rotas.get('/restaurantes', restaurantes.listarRestaurantes)
+
+//Cadastrar Endereço
+rotas.post('/endereco', endereco.cadastrarEndereco)
 
 //listar Produtos do Restaurante
 rotas.get('/cardapio/:id', produtos.listarProdutos)
