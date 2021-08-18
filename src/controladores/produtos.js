@@ -13,11 +13,16 @@ const listarProdutos = async (req, res) => {
 
         const cardapio = await knex('produto').where('ativo', true).andWhere('restaurante_id', id);
 
+        
        /*  if(!cardapio[0]){
             return res.status(404).json('Restaurante não possui produtos ativos');
         } */
 
         const dadosRestaurante = await knex('restaurante').where('id', id);
+
+        const urlCategoria = dadosRestaurante[0].categoria_id;
+
+        const categoria = await knex.select('img_categoria').from('categoria').where('id', urlCategoria);
 
         // const restaurante = { restaurante: dadosRestaurante[0], cardapio };
 
@@ -25,6 +30,7 @@ const listarProdutos = async (req, res) => {
             id: dadosRestaurante[0].id,
             nome: dadosRestaurante[0].nome,
             categoria_id: dadosRestaurante[0].categoria_id,
+            img_categoria: categoria[0].img_categoria,
             taxa_entrega: dadosRestaurante[0].taxa_entrega,
             tempo_entrega_minutos: dadosRestaurante[0].tempo_entrega_minutos,
             valor_minimo_pedido: dadosRestaurante[0].valor_minimo_pedido,
