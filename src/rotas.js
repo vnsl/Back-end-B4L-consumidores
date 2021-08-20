@@ -25,6 +25,9 @@ rotas.get('/restaurantes', restaurantes.listarRestaurantes)
 //Cadastrar Endereço
 rotas.post('/endereco', endereco.cadastrarEndereco)
 
+//Obter Endereço
+rotas.get('/endereco', endereco.obterEndereco);
+
 //listar Produtos do Restaurante
 rotas.get('/cardapio/:id', produtos.listarProdutos)
 

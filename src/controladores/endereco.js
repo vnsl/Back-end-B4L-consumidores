@@ -26,6 +26,26 @@ const cadastrarEndereco = async (req, res) => {
     }
 }
 
+const obterEndereco = async (req, res) => {
+    const { consumidor } = req;
+
+    try {
+        const enderecoEncontrado = await knex('endereco').where('consumidor_id', consumidor.dadosConsumidor.id);
+
+        if(!enderecoEncontrado[0]){
+            res.status(404).json('Endereço não cadastrado');
+        } 
+
+        return res.status(200).json(enderecoEncontrado[0])
+        
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
+
+}
+
+
 module.exports = {
-    cadastrarEndereco
+    cadastrarEndereco,
+    obterEndereco
 }
