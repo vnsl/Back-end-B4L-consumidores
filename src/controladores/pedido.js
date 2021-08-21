@@ -28,6 +28,7 @@ const finalizarPedido = async (req, res) => {
 }
 
 module.exports = {
-    criarPedido
+    criarPedido,
+    finalizarPedido
 }
 

@@ -31,6 +31,9 @@ rotas.get('/cardapio/:id', produtos.listarProdutos)
 //Criar Pedido
 rotas.get('/pedido/:id', pedido.criarPedido);
 
+//Finalizar Pedido
+rotas.post('/finalizar_pedido', pedido.finalizarPedido);
+
 // envio da imagem
 rotas.post('/upload', imagem.enviarImagem);
 

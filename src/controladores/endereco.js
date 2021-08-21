@@ -18,7 +18,7 @@ const cadastrarEndereco = async (req, res) => {
             return res.status(400).json("O endereço não foi cadastrado.");
         }
 
-        return res.status(200).json('Endereço cadastrado com sucesso');
+        return res.status(200).json('');
         
         
     } catch (error) {
