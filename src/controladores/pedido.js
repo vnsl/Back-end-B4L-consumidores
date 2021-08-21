@@ -15,6 +15,18 @@ const criarPedido = async (req, res) =>  {
     }
 }
 
+const finalizarPedido = async (req, res) => {
+    const { consumidor } = req;
+    const { detalhepedido } = req.body;
+
+    try {
+        
+    
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
+}
+
 module.exports = {
     criarPedido
 }
