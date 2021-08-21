@@ -11,7 +11,7 @@ create table if not exists pedido (
 	consumidor_id int not null,
 	restaurante_id int not null,
   	foreign key (consumidor_id) references consumidor (id),
-  	foreign key (restaurante_id) references restaurante (id),
+  	foreign key (restaurante_id) references restaurante (id)
 );
 
 create table if not exists detalhepedido (
@@ -21,7 +21,7 @@ create table if not exists detalhepedido (
 	quantidade_produto int not null,
 	valor_total_produto int not null,
   	foreign key (pedido_id) references pedido (id),
-  	foreign key (produto_id) references produto (id),
+  	foreign key (produto_id) references produto (id)
 );
 
 create table if not exists endereco (
@@ -31,5 +31,5 @@ create table if not exists endereco (
 	cep text not null,
 	complemento text,
 	foreign key (consumidor_id) references consumidor (id)
-)
+);
 
