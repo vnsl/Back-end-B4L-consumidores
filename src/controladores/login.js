@@ -27,12 +27,19 @@ const login = async (req, res) => {
 
         const {senha: _, ...dadosConsumidor } = consumidor;
 
+        // const enderecoEncontrado = await knex('endereco').where('consumidor_id', consumidor.id);
+
         return res.status(200).json({
             consumidor: {
                 id: dadosConsumidor.id,
                 nome: dadosConsumidor.nome,
                 email: dadosConsumidor.email,
-                telefone: dadosConsumidor.telefone
+                telefone: dadosConsumidor.telefone,
+                endereco: {
+                    endereco: '',
+                    cep: '',
+                    complemento: '',
+                }
             }, 
             token
         });
