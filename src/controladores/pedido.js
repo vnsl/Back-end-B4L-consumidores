@@ -16,11 +16,13 @@ const criarPedido = async (req, res) =>  {
 }
 
 const finalizarPedido = async (req, res) => {
-    const { consumidor } = req;
-    const { detalhepedido } = req.body;
-
-    try {
+    const { listaEditada } = req.body;
         
+    try {                
+       
+        const finalizarPedido = await knex('detalhepedido').insert([...listaEditada]).returning('*');
+        
+        return res.status(200).json('');
     
     } catch (error) {
         return res.status(400).json(error.message);
