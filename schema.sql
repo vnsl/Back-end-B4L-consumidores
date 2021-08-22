@@ -27,8 +27,8 @@ create table if not exists detalhepedido (
 create table if not exists endereco (
 	id serial primary key,
 	consumidor_id int not null,
-	endereco text not null,
-	cep text not null,
+	endereco text,
+	cep text,
 	complemento text,
 	foreign key (consumidor_id) references consumidor (id)
 );

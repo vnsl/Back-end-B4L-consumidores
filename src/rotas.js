@@ -23,7 +23,7 @@ rotas.use(autenticacao);
 rotas.get('/restaurantes', restaurantes.listarRestaurantes)
 
 //Cadastrar Endereço
-rotas.post('/endereco', endereco.cadastrarEndereco)
+rotas.put('/endereco', endereco.cadastrarEndereco)
 
 //listar Produtos do Restaurante
 rotas.get('/cardapio/:id', produtos.listarProdutos)

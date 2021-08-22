@@ -20,6 +20,10 @@ const cadastrarConsumidor = async (req, res) => {
         // persistência dos dados do consumidor no banco de dados
 
         const consumidor = await knex('consumidor').insert({nome, email, telefone, 'senha' : senhaCriptografada}).returning('*');
+        
+        console.log(consumidor);
+
+        const cadastrarEndereco = await knex('endereco').insert({'consumidor_id': consumidor[0].id}).returning('*');
 
 
         if (consumidor.length === 0) {
