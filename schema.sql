@@ -10,6 +10,8 @@ create table if not exists pedido (
 	id serial primary key,
 	consumidor_id int not null,
 	restaurante_id int not null,
+	saiu_entrega boolean not null,
+	pedido_finalizado boolean not null,
   	foreign key (consumidor_id) references consumidor (id),
   	foreign key (restaurante_id) references restaurante (id)
 );
