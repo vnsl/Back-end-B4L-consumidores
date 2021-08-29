@@ -2,10 +2,11 @@ const knex = require('../conexao');
 
 const criarPedido = async (req, res) =>  {
     const { consumidor } = req;
+    const { custoFinalCarrinho } = req.body;
     const { id } = req.params;
 
     try {
-        const criarPedido = await knex('pedido').insert({'consumidor_id': consumidor.dadosConsumidor.id, 'restaurante_id': id }).returning('*');
+        const criarPedido = await knex('pedido').insert({'consumidor_id': consumidor.dadosConsumidor.id, 'restaurante_id': id, 'custo_final': Number(custoFinalCarrinho) }).returning('*');
         
         return res.status(200).json(criarPedido[0])
 
