@@ -40,7 +40,7 @@ const login = async (req, res) => {
                 endereco: {
                     endereco: enderecoEncontrado.endereco ?? '',
                     cep: enderecoEncontrado.cep ?? '',
-                    complemento: enderecoEncontrado.complemento ?? 'NA',
+                    complemento: enderecoEncontrado.complemento ?? '',
                 }
             }, 
             token
