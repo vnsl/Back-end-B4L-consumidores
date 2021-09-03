@@ -19,7 +19,7 @@ const cadastrarConsumidor = async (req, res) => {
 
         // persistência dos dados do consumidor no banco de dados
 
-        const consumidor = await knex('consumidor').insert({nome, email, telefone, 'senha' : senhaCriptografada}).returning('*');
+        const consumidor = await knex('consumidor').insert({'nome_consumidor': nome, email, telefone, 'senha' : senhaCriptografada}).returning('*');
         
         console.log(consumidor);
 
@@ -65,7 +65,7 @@ const atualizarConsumidor = async (req, res) => {
             const senhaAtualizada = await knex('consumidor').where({ id }).update({ 'senha': senhaCriptografada });          
         }        
 
-        const consumidorAtualizado = await knex('consumidor').where({ id }).update({ nome, email, telefone });
+        const consumidorAtualizado = await knex('consumidor').where({ id }).update({ 'nome_consumidor': nome, email, telefone });
 
 
         if (!consumidorAtualizado) {
