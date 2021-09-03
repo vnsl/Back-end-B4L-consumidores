@@ -29,7 +29,7 @@ rotas.put('/endereco', endereco.cadastrarEndereco)
 rotas.get('/cardapio/:id', produtos.listarProdutos)
 
 //Criar Pedido
-rotas.get('/pedido/:id', pedido.criarPedido);
+rotas.post('/pedido/:id', pedido.criarPedido);
 
 //Finalizar Pedido
 rotas.post('/finalizar_pedido', pedido.finalizarPedido);
