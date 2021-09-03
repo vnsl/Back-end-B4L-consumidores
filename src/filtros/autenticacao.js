@@ -18,7 +18,7 @@ const autenticacao = async (req, res, next) => {
         const consumidor = await knex('consumidor').where({ id }).first();
 
         if (!consumidor) {
-            return res.status(404).json("Token inválido");
+            return res.status(404).json("Token de consumidor inválido");
         }
         
         const { senha, ...dadosConsumidor } = consumidor;

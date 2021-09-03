@@ -34,7 +34,7 @@ const login = async (req, res) => {
         return res.status(200).json({
             consumidor: {
                 id: dadosConsumidor.id,
-                nome: dadosConsumidor.nome,
+                nome: dadosConsumidor.nome_consumidor,
                 email: dadosConsumidor.email,
                 telefone: dadosConsumidor.telefone,
                 endereco: {
